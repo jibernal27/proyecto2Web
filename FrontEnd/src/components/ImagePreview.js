@@ -8,11 +8,11 @@ export default class ImagePreview extends Component {
 
 
   render() {
-    return (     
-        <div className="col-sm-2">
+    return (
+      <div class="Thumb">
           <img src={`${this.props.url}`}/>
-        </div>
-      
+      </div>
+
     );
   }
 }

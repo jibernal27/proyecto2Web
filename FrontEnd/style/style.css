@@ -1,9 +1,81 @@
 
-.margen {
-  margin-top: 40px;
-  padding-top: 40px;
+*{
+
+}
+
+#galeria div{
+  width:900px;
+}
+
+#arriba{
+  position: fixed;
+  left:50%;
+  BOTTOM:145px;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  border-bottom: 45px solid black;
+  width: 0;
+  height: 0;
+}
+
+#derecha{
+  position: fixed;
+  left:calc(50% + 90px);
+  BOTTOM:55px;
+  border-top: 45px solid transparent;
+  border-bottom: 45px solid transparent;
+  border-left: 45px solid black;
+  width: 0;
+  height: 0;
+}
+
+#izquierda{
+  position: fixed;
+  left:calc(50% - 45px);
+    BOTTOM:55px;
+    border-top: 45px solid transparent;
+    border-bottom: 45px solid transparent;
+    border-right:45px solid black;
+}
+
+#abajo{
+  position: fixed;
+  left:50%;
+  BOTTOM:10px;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  border-top: 45px solid black;
+  width: 0;
+  height: 0;
 }
 
 .buscador input {
-  min-width: 75%;
+  z-index:1;
+  margin:0 auto;
+
+}
+
+
+.buscador{
+  background-color: lightblue;
+}
+
+
+img{
+  height:150px;
+  width:150px;
+  float: left;
+  object-fit:cover;
+  /*position:absolute;
+  TOP:-50px;
+  LEFT:-50px;*/
+  z-index:-1;
+
+  overflow: hidden;
+}
+
+button{
+
+  z-index:1;
+
 }
