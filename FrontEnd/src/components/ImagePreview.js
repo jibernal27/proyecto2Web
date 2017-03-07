@@ -9,10 +9,7 @@ export default class ImagePreview extends Component {
 
   render() {
     return (
-      <div class="Thumb">
           <img src={`${this.props.url}`}/>
-      </div>
-
     );
   }
 }

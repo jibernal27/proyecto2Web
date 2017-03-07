@@ -17,12 +17,12 @@ class App extends Component {
             imagenes: [],
             x: xs,
             y: ys,
-            cant: 24,
+            cant: 100,
             bus: "",
 
         };
 
-        /**this.obtenerImagenesPosicion();*/
+        this.obtenerImagenesPosicion();
         this.organizar();
 
     }
@@ -60,225 +60,63 @@ class App extends Component {
 
     obtenerImagenesPosicion() {
 
-        axios.get(ROOT_URL + "/imagenes/0/"+10)
+        axios.post(ROOT_URL + "/imagenes", {
+                x: this.state.x,
+                y: this.state.y,
+                num: this.state.cant
+            })
             .then(response => {
                 this.setState({
                     imagenes: response.data,
                 }, function() {
-                    console.log(response.data);
+                    console.log("Cabio estado");
                 })
             });
     }
 
     moverALaDerecha() {
         this.setState({
-            x: this.state.x + 1
+            x: this.state.x + this.state.cant
         }, function() {
-            console.log(response.data);
+            console.log("Cabio estado");
         })
-
-
-        axios.get(ROOT_URL + "/imagenes/0/"+4)
-            .then(response => {
-                this.setState({
-                }, function() {
-
-                  this.state.imagenes[0].url = this.state.imagenes[1].url;
-                  this.state.imagenes[6].url = this.state.imagenes[7].url;
-                  this.state.imagenes[12].url = this.state.imagenes[13].url;
-                  this.state.imagenes[18].url = this.state.imagenes[19].url;
-
-                  this.state.imagenes[1].url = this.state.imagenes[2].url;
-                  this.state.imagenes[7].url = this.state.imagenes[8].url;
-                  this.state.imagenes[13].url = this.state.imagenes[14].url;
-                  this.state.imagenes[19].url = this.state.imagenes[20].url;
-
-                  this.state.imagenes[2].url = this.state.imagenes[3].url;
-                  this.state.imagenes[8].url = this.state.imagenes[9].url;
-                  this.state.imagenes[14].url = this.state.imagenes[15].url;
-                  this.state.imagenes[20].url = this.state.imagenes[21].url;
-
-                  this.state.imagenes[3].url = this.state.imagenes[4].url;
-                  this.state.imagenes[9].url = this.state.imagenes[10].url;
-                  this.state.imagenes[15].url = this.state.imagenes[16].url;
-                  this.state.imagenes[21].url = this.state.imagenes[22].url;
-
-                  this.state.imagenes[4].url = this.state.imagenes[5].url;
-                  this.state.imagenes[10].url = this.state.imagenes[11].url;
-                  this.state.imagenes[16].url = this.state.imagenes[17].url;
-                  this.state.imagenes[22].url = this.state.imagenes[23].url;
-
-
-                  this.state.imagenes[5].url = response.data[0].url;
-                  this.state.imagenes[11].url = response.data[1].url;
-                  this.state.imagenes[17].url = response.data[2].url;
-                  this.state.imagenes[23].url = response.data[3].url;
-
-                  this.forceUpdate();
-                    console.log(response.data);
-                })
-            });
-
-        /**this.obtenerImagenesPosicion();*/
+        this.obtenerImagenesPosicion();
 
     }
 
 
     moverALaIzquierda() {
         this.setState({
-            x: this.state.x - 1
+            x: this.state.x - this.state.cant
         }, function() {
-            console.log(response.data);
+            console.log("Cabio estado");
         })
-
-
-        axios.get(ROOT_URL + "/imagenes/0/"+4)
-            .then(response => {
-                this.setState({
-                }, function() {
-
-                  this.state.imagenes[5].url = this.state.imagenes[4].url;
-                  this.state.imagenes[11].url = this.state.imagenes[10].url;
-                  this.state.imagenes[17].url = this.state.imagenes[16].url;
-                  this.state.imagenes[23].url = this.state.imagenes[22].url;
-
-                  this.state.imagenes[4].url = this.state.imagenes[3].url;
-                  this.state.imagenes[10].url = this.state.imagenes[9].url;
-                  this.state.imagenes[16].url = this.state.imagenes[15].url;
-                  this.state.imagenes[22].url = this.state.imagenes[21].url;
-
-                  this.state.imagenes[3].url = this.state.imagenes[2].url;
-                  this.state.imagenes[9].url = this.state.imagenes[8].url;
-                  this.state.imagenes[15].url = this.state.imagenes[14].url;
-                  this.state.imagenes[21].url = this.state.imagenes[20].url;
-
-                  this.state.imagenes[2].url = this.state.imagenes[1].url;
-                  this.state.imagenes[8].url = this.state.imagenes[7].url;
-                  this.state.imagenes[14].url = this.state.imagenes[13].url;
-                  this.state.imagenes[20].url = this.state.imagenes[19].url;
-
-                  this.state.imagenes[1].url = this.state.imagenes[0].url;
-                  this.state.imagenes[7].url = this.state.imagenes[6].url;
-                  this.state.imagenes[13].url = this.state.imagenes[12].url;
-                  this.state.imagenes[19].url = this.state.imagenes[18].url;
-
-
-                  this.state.imagenes[0].url = response.data[0].url;
-                  this.state.imagenes[6].url = response.data[1].url;
-                  this.state.imagenes[12].url = response.data[2].url;
-                  this.state.imagenes[18].url = response.data[3].url;
-
-                  this.forceUpdate();
-                    console.log(response.data);
-                })
-            });
-
-
-        /**this.obtenerImagenesPosicion();*/
+        this.obtenerImagenesPosicion();
 
     }
 
 
     moverArriba() {
         this.setState({
-            y: this.state.y + 1
+            y: this.state.y + this.state.cant
         }, function() {
-            console.log(response.data);
+            console.log("Cabio estado");
         })
-
-
-        axios.get(ROOT_URL + "/imagenes/0/"+6)
-            .then(response => {
-                this.setState({
-                }, function() {
-
-                  this.state.imagenes[18].url = this.state.imagenes[12].url;
-                  this.state.imagenes[19].url = this.state.imagenes[13].url;
-                  this.state.imagenes[20].url = this.state.imagenes[14].url;
-                  this.state.imagenes[21].url = this.state.imagenes[15].url;
-                  this.state.imagenes[22].url = this.state.imagenes[16].url;
-                  this.state.imagenes[23].url = this.state.imagenes[17].url;
-
-                  this.state.imagenes[12].url = this.state.imagenes[6].url;
-                  this.state.imagenes[13].url = this.state.imagenes[7].url;
-                  this.state.imagenes[14].url = this.state.imagenes[8].url;
-                  this.state.imagenes[15].url = this.state.imagenes[9].url;
-                  this.state.imagenes[16].url = this.state.imagenes[10].url;
-                  this.state.imagenes[17].url = this.state.imagenes[11].url;
-
-                  this.state.imagenes[6].url = this.state.imagenes[0].url;
-                  this.state.imagenes[7].url = this.state.imagenes[1].url;
-                  this.state.imagenes[8].url = this.state.imagenes[2].url;
-                  this.state.imagenes[9].url = this.state.imagenes[3].url;
-                  this.state.imagenes[10].url = this.state.imagenes[4].url;
-                  this.state.imagenes[11].url = this.state.imagenes[5].url;
-
-                  this.state.imagenes[0].url = response.data[0].url;
-                  this.state.imagenes[1].url = response.data[1].url;
-                  this.state.imagenes[2].url = response.data[2].url;
-                  this.state.imagenes[3].url = response.data[3].url;
-                  this.state.imagenes[4].url = response.data[4].url;
-                  this.state.imagenes[5].url = response.data[5].url;
-
-                  this.forceUpdate();
-                    console.log(response.data);
-                })
-            });
-
-        /**this.obtenerImagenesPosicion();*/
+        this.obtenerImagenesPosicion();
 
     }
 
 
     moverAbajao() {
         this.setState({
-            y: this.state.y - 1
+            y: this.state.y - this.state.cant
         }, function() {
-            console.log(response.data);
+            console.log("Cabio estado");
         })
-
-        axios.get(ROOT_URL + "/imagenes/0/"+6)
-            .then(response => {
-                this.setState({
-                }, function() {
-
-                  this.state.imagenes[0].url = this.state.imagenes[6].url;
-                  this.state.imagenes[1].url = this.state.imagenes[7].url;
-                  this.state.imagenes[2].url = this.state.imagenes[8].url;
-                  this.state.imagenes[3].url = this.state.imagenes[9].url;
-                  this.state.imagenes[4].url = this.state.imagenes[10].url;
-                  this.state.imagenes[5].url = this.state.imagenes[11].url;
-
-                  this.state.imagenes[6].url = this.state.imagenes[12].url;
-                  this.state.imagenes[7].url = this.state.imagenes[13].url;
-                  this.state.imagenes[8].url = this.state.imagenes[14].url;
-                  this.state.imagenes[9].url = this.state.imagenes[15].url;
-                  this.state.imagenes[10].url = this.state.imagenes[16].url;
-                  this.state.imagenes[11].url = this.state.imagenes[17].url;
-
-                  this.state.imagenes[12].url = this.state.imagenes[18].url;
-                  this.state.imagenes[13].url = this.state.imagenes[19].url;
-                  this.state.imagenes[14].url = this.state.imagenes[20].url;
-                  this.state.imagenes[15].url = this.state.imagenes[21].url;
-                  this.state.imagenes[16].url = this.state.imagenes[22].url;
-                  this.state.imagenes[17].url = this.state.imagenes[23].url;
-
-                  this.state.imagenes[18].url = response.data[0].url;
-                  this.state.imagenes[19].url = response.data[1].url;
-                  this.state.imagenes[20].url = response.data[2].url;
-                  this.state.imagenes[21].url = response.data[3].url;
-                  this.state.imagenes[22].url = response.data[4].url;
-                  this.state.imagenes[23].url = response.data[5].url;
-
-                  this.forceUpdate();
-                    console.log(response.data);
-                })
-            });
-
-
-        /**this.obtenerImagenesPosicion();*/
+        this.obtenerImagenesPosicion();
 
     }
+
 
     render() {
             return (
@@ -291,23 +129,23 @@ class App extends Component {
                   <br/>
               </div>
 
-              <div>
-
-              <div id="arriba" class="butt"  onClick = { this.moverArriba.bind(this) } ></div>
-              <br/>
-              <br/>
-              <div id="izquierda" class="butt" onClick = { this.moverALaIzquierda.bind(this) } ></div>
-              <div id="derecha" class="butt" onClick = { this.moverALaDerecha.bind(this) } ></div>
-              <br/>
-              <br/>
-              <div id="abajo" class="butt" onClick = { this.moverAbajao.bind(this) } ></div>
-              <br/>
-              </div>
 
               < div id="galeria"> {
                     this.state.imagenes.map(imagesData => < ImagePreview key = { imagesData.id } {...imagesData }
                         />)}
-                        < /div>  < /div>
+                        < /div> 
+			<div id="flechas">
+			<div id="arriba" class="butt"  onClick = { this.moverArriba.bind(this) } ></div>
+			<br/>
+            <br/>
+            <div id="izquierda" class="butt" onClick = { this.moverALaIzquierda.bind(this) } ></div>
+            <div id="derecha" class="butt" onClick = { this.moverALaDerecha.bind(this) } ></div>
+            <br/>
+            <br/>
+            <div id="abajo" class="butt" onClick = { this.moverAbajao.bind(this) } ></div>
+            <br/>
+			</div>
+			</div>
 
 
                         );
