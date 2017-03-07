@@ -11,17 +11,27 @@ body{
 	border-radius: 200px;
 	background-color:white;
 
+	opacity:0.5;
+	
 	width:180px;
 	height:180px;
 	right:2.5%;
 	bottom:2.5%;
 }
 
+#flechas:Hover{
+	
+	opacity:0.9;
+}
+
+
 #galeria div{
   width:100%;
   top:5%;
   left:0px;
   right:0px;
+  
+  overflow:auto;
 }
 
 .home{
@@ -35,7 +45,7 @@ body{
 #arriba{
   position: relative;
   TOP:0px;
-  Right:0px;
+  Right:-45px;
   border-left: 45px solid transparent;
   border-right: 45px solid transparent;
   border-bottom: 45px solid black;
@@ -45,7 +55,8 @@ body{
 
 #derecha{
   position: relative;
-  right:0px;
+  top:-126px;
+  right:-135px;
   border-top: 45px solid transparent;
   border-bottom: 45px solid transparent;
   border-left: 45px solid black;
@@ -55,15 +66,17 @@ body{
 
 #izquierda{
   position: relative;
-  left:0;
+  top:-36px;
+  left:-135px;
     border-top: 45px solid transparent;
     border-bottom: 45px solid transparent;
     border-right:45px solid black;
 }
 
 #abajo{
-  position: relative;
-  BOTTOM:0px;
+  position: absolute;
+  right:45;
+  top:135;
   border-left: 45px solid transparent;
   border-right: 45px solid transparent;
   border-top: 45px solid black;

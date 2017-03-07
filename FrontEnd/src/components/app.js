@@ -76,7 +76,7 @@ class App extends Component {
 
     moverALaDerecha() {
         this.setState({
-            x: this.state.x + this.state.cant
+            x: this.state.x + 1
         }, function() {
             console.log("Cabio estado");
         })
@@ -87,7 +87,7 @@ class App extends Component {
 
     moverALaIzquierda() {
         this.setState({
-            x: this.state.x - this.state.cant
+            x: this.state.x - 1
         }, function() {
             console.log("Cabio estado");
         })
@@ -98,7 +98,7 @@ class App extends Component {
 
     moverArriba() {
         this.setState({
-            y: this.state.y + this.state.cant
+            y: this.state.y + 1
         }, function() {
             console.log("Cabio estado");
         })
@@ -109,7 +109,7 @@ class App extends Component {
 
     moverAbajao() {
         this.setState({
-            y: this.state.y - this.state.cant
+            y: this.state.y - 1
         }, function() {
             console.log("Cabio estado");
         })
