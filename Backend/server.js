@@ -4,6 +4,9 @@ var imagenes=require('./routes/imagenes');
 var bodyParser = require('body-parser')
 
 var app = express();
+var cors = require('cors');
+app.use(cors({origin: '*'}));
+
 let port= process.env.PORT ||8090;
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
