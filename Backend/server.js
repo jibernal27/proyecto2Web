@@ -1,4 +1,4 @@
-
+// Recuerden el uso de use strict en los archivos de javascript
 var express = require('express');
 var imagenes=require('./routes/imagenes');
 var bodyParser = require('body-parser')
