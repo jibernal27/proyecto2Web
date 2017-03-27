@@ -83,10 +83,13 @@
 
 
 	exports.findInSquare = function(req, res) {
-	    var query = req.body;
+		
+    		var query = req.body;
+		try{
 	    console.log('Retriving images: ' + JSON.stringify(query));
 
 	    // Con Postgres esto sale en 3 lineas :'(
+		
 	    var rta = [];
 	    var numImagenes = query.num;
 	    var xCentro = query.x;
@@ -125,9 +128,12 @@
 	                    rta.pop();
 	                }
 	                res.header('Access-Control-Allow-Origin', '*');
-	                res.json(rta);
+	                res.status(200).json(rta);
 	            }
-
+	    }
+		catch(err){
+		    res.status(500).send(err);
+	    }
 
 
 	        });
