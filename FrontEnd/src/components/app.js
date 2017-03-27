@@ -51,9 +51,14 @@ class App extends Component {
         {
             axios.get(ROOT_URL + "/imagenes/" + cri + "/" + this.state.cant)
                 .then(response => {
+                if (response.status === 200){
                     this.setState({
                         imagenes: response.data
                     });
+                }
+                else{
+                    // Mensaje de error
+                }
                 })
         }
     }
@@ -66,14 +71,21 @@ class App extends Component {
                 num: this.state.cant
             })
             .then(response => {
+            if (response.status === 200){
                 this.setState({
                     imagenes: response.data,
                 }, function() {
                     console.log("Cabio estado");
                 })
             });
+            }
+            else{
+                // Mensaje de error
+            }
     }
 
+    // y asi con los demas metodos que involucren una petición REST
+                  
     moverALaDerecha() {
         this.setState({
             x: this.state.x + 1
